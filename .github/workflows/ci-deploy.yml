@@ -56,6 +56,13 @@ jobs:
           name: my-artifact
           path: ./artifact
 
+      - name: Running script
+        run: |
+          cd artifact
+          python install *.whl
+          python script.py
+
+
 
 
 
