@@ -8,8 +8,8 @@ on:
 
 jobs:
 
-  with-checkout-job:
-    name: With Checkout
+  Build-job:
+    name: Build Job
     runs-on: 'ubuntu-latest'
 
 
@@ -32,5 +32,30 @@ jobs:
           pip install setuptools wheel build
           python -m build
           tree .
+
+      - name: Artifact Creation
+        run: |
+          rm dist/my_package-0.0.0.tar.gz
+          mv script.py dist/script.py
+          tree.
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: dist/
+
+  Deploy-job:
+    name: Deploy Job
+    needs: Build-job
+    runs-on: 'ubuntu-latest'
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: my_artifact
+          path: ./artifact
+
+
 
 
