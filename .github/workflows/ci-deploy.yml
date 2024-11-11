@@ -6,7 +6,7 @@ on:
       - feat/issue#3/build-and-deploy
     workflow_dispatch:
 
-  jobs:
+jobs:
 
   with-checkout-job:
     name: With Checkout
