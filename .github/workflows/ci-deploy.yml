@@ -58,14 +58,14 @@ jobs:
 
       - name: Running script
         run: |
-          cd artifact
-          pip install *.whl
+          ls ./artifact
+          pip ./artifact/install *.whl
 
       - name: Running code
         run: |
           pwd
           ls
-          python script.py
+          python ./artifact/script.py
 
 
 
