@@ -29,6 +29,7 @@ jobs:
       - name: Build package
         run: |
           python -m pip install --upgrade pip
+          sudo apt-get install -y tree
           pip install setuptools wheel build
           python -m build
           tree .
