@@ -58,8 +58,7 @@ jobs:
 
       - name: Running script
         run: |
-          ls ./artifact
-          pip ./artifact/install *.whl
+          pip install ./artifact/install *.whl
 
       - name: Running code
         run: |
