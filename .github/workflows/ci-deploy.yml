@@ -59,7 +59,12 @@ jobs:
       - name: Running script
         run: |
           cd artifact
-          python install *.whl
+          pip install *.whl
+
+      - name: Running code
+        run: |
+          pwd
+          ls
           python script.py
 
 
